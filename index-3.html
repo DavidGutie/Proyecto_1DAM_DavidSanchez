@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto</title>
+  <style>
+    :root {
+      --pink: Red;
+      --overlay: rgba(0, 0, 0, 0.6);
+      --gray-light: rgba(255, 255, 255, 0.7);
+      --gray-dark: #fff;
+    }
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      font-family: Arial, sans-serif;
+      color: var(--gray-dark);
+      line-height: 1.5;
+      background-image: url('img/logo-f1.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .container {
+      max-width: 1200px;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      background-color: var(--overlay);
+      border-radius: 8px;
+      padding: 40px;
+      box-sizing: border-box;
+    }
+    .section {
+      flex: 1 1 300px;
+    }
+    .section h2 {
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+      color: var(--pink);
+      letter-spacing: 1px;
+    }
+    .section hr {
+      border: none;
+      border-bottom: 1px solid var(--gray-light);
+      margin-bottom: 20px;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    .recaptcha-placeholder {
+      width: 100%;
+      height: 70px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      padding: 0 10px;
+      color: #666;
+      font-size: 0.9rem;
+      background: #fff;
+    }
+    .btn-submit {
+      background: var(--pink);
+      color: #fff;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    .btn-submit:hover {
+      opacity: 0.9;
+    }
+    .contact-info p {
+      margin: 8px 0;
+      color: #fff;
+    }
+    .contact-info strong {
+      font-weight: bold;
+    }
+    .map-wrapper iframe {
+      width: 100%;
+      height: 300px;
+      border: 0;
+      border-radius: 4px;
+    }
+    footer {
+    background-color: #cc0000;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+    }
+    .icono_ig{
+  position: relative;
+  top: -60px;
+  left: 100px;
+  width: 50px;
+  height: 50px;
+  }
+  .pie{
+    text-align: left;
+  }
+  .terminos{
+    text-align: left;
+    color: white;
+  }
+  a:link{
+    color: #ddd;
+  }
+  a:visited{
+    color: #ddd;
+  }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="container">
+      <!-- Form Section -->
+      <div class="section form-section">
+        <h2>DÉJANOS TUS DATOS</h2>
+        <hr>
+        <p>
+          Siente la emoción de la velocidad y la adrenalina de la Fórmula 1. Déjanos tus datos para contactarte y asegurar tu lugar en la parrilla, vivir la máxima competición automovilística y disfrutar del rugir de los motores en primera fila.
+        </p>
+        <form action="#" method="post">
+          <div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+          </div>
+          <div class="form-group">
+            <label for="apellidos">Apellidos:</label>
+            <input type="text" id="apellidos" name="apellidos" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          
+          <button type="submit" class="btn-submit">Enviar</button>
+        </form>
+      </div>
+      <!-- Contact Info Section -->
+      <div class="section contact-section">
+        <h2>CONTÁCTANOS</h2>
+        <hr>
+        <div class="contact-info">
+          <p><strong>Teléfono:</strong> +34 123 456 789</p>
+          <p><strong>Dirección:</strong><br>
+            Avenida de los Almendros, 10<br>
+            03500 Benidorm, Alicante, España.
+          </p>
+        </div>
+        <div class="map-wrapper">
+          <iframe
+            src="https://maps.google.com/maps?q=Benidorm,+Alicante,+España&output=embed"
+            allowfullscreen loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- Pie de página -->
+  <footer>
+    <div class="pie">
+        <p>&copy; 2025 David Sánchez - Proyecto Fórmula 1</p>
+    </div>
+    <ul class="terminos">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="index-3.html">Página de contacto</a></li>
+    </ul>
+    <a href="https://www.instagram.com/f1/" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icono_ig"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg></a>
+  </footer>
+</body>
+</html>
