@@ -1,37 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="styles.css">
+  <title>Campeones F1</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .tabla-campeones {
+      max-width: 800px;
+      margin: 40px auto 0 auto; /* Más arriba, menos margen superior */
+      background: rgba(0, 0, 0, 0.55); /* Fondo negro más translúcido */
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      backdrop-filter: blur(2px); /* Efecto de desenfoque sutil */
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: left;
+      background: rgba(0,0,0,0.35); /* Celdas translúcidas y negras */
+      color: #fff; /* Letras en blanco */
+    }
+    th {
+      background-color: rgba(30,30,30,0.7); /* Encabezado más oscuro */
+      color: #fff;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <div class="navbar">
-            <a href="index.html">Campeones actuales</a>
-        </div>
-    </header>
-   <main >
-    <video autoplay muted loop id="video-fondo">
-        <source src="img/New 2025 F1 Opening Titles - FORMULA 1 (1080p, h264).mp4" type="video/mp4">
-      </video>
-    <div class="formulario">
-        <form>
-            <fieldset>
-                <legend>Posible nuevo campeon</legend>
-                <label for="nombre">Nombre: </label>
-                <input type="text" id="nombre" name="nombre" required><br><br>
-                <label for="apellido">Apellido: </label>
-                <input type="text" name="apellido" id="apellido" required><br><br>
-                <label for="escuderia">Escudería: </label>
-                <input type="text" name="escuderia" id="escuderia" required><br><br>
-                <label for="dorsal">Dorsal:</label>
-                <input type="text" name="dorsal" id="dorsal" required><br><br>
-                <button type="submit">Enviar</button>
-            </fieldset>
-        </form>
+  <header>
+    <div class="navbar">
+      <a href="index.html">Campeones Historicos</a>
     </div>
-   </main>
+  </header>
+
+  <main>
+    <video autoplay muted loop id="video-fondo">
+      <source src="img/New 2025 F1 Opening Titles - FORMULA 1 (1080p, h264).mp4" type="video/mp4" />
+    </video>
+
+    <div class="tabla-campeones">
+      <table>
+        <colgroup>
+          <col style="width: 20%;">
+          <col style="width: 40%;">
+          <col style="width: 40%;">
+        </colgroup>
+        <thead>
+          <tr>
+            <th>Temporada</th>
+            <th>Piloto</th>
+            <th>Escudería</th>
+          </tr>
+        </thead>
+        <tbody id="tabla-campeones"></tbody>
+      </table>
+    </div>
+  </main>
+  <script src="js/CampeonesF1.js"></script>
+  <script>
+     const tbody = document.getElementById('tabla-campeones');
+    campeonesF1.forEach(({ temporada, piloto, escuderia }) => {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `<td>${temporada}</td><td>${piloto}</td><td>${escuderia ?? 'Desconocida'}</td>`;
+      tbody.appendChild(tr);
+    });
+  </script>
 </body>
 </html>
